@@ -1,0 +1,44 @@
+{
+  "name": "react-novel",
+  "version": "1.0.0",
+  "description": "A React application for Visual Novels",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run copy-client && webpack",
+    "copy-client": "cp -r client/ build/",
+    "test": "npm run test-client && npm run test-server",
+    "test-client": "mocha --compilers js:babel-core/register --require ./test/client/test_helper.js \"test/client/**/*@(.js|.jsx)\"",
+    "test-server": "mocha --compilers js:babel-core/register \"test/server/**/*@(.js)\" --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenBarrett89/react-novel.git"
+  },
+  "author": "Ben Barrett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenBarrett89/react-novel/issues"
+  },
+  "homepage": "https://github.com/BenBarrett89/react-novel#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6",
+    "react-router": "^3.0.0",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "chai": "^3.5.0",
+    "jsdom": "^9.8.3",
+    "mocha": "^3.2.0",
+    "standard": "^8.6.0",
+    "webpack": "^1.13.3"
+  }
+}
