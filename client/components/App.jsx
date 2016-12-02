@@ -10,7 +10,8 @@ export default React.createClass({
       <div>
         <ul>
           <li>React Novel</li>
-          <li><NavLink to='/' activeStyle={{ color: 'red' }}>Home</NavLink></li>
+          <li><NavLink to='/'>Home</NavLink></li>
+          <li><NavLink to='/novel'>Novel</NavLink></li>
         </ul>
 
         {this.props.children}

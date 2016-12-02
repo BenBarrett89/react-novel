@@ -1,11 +1,8 @@
-function setState (state, newState) {
-  return newState
-}
+import {combineReducers} from 'redux'
+import NovelReducer from './NovelReducer'
 
-export default function (state = {}, action) {
-  switch (action.type) {
-    case 'SET_STATE':
-      return setState(state, action.state)
-  }
-  return state
-}
+const reducer = combineReducers({
+  novel: NovelReducer
+})
+
+export default reducer

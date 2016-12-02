@@ -20,6 +20,10 @@ const startServer = (portNum) => {
   })
 }
 
+app.get('/', (req, res) => {
+  res.send('React Novel')
+})
+
 process.on('SIGINT', () => {
   server.close()
   process.exit()
