@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Router, Route, hashHistory} from 'react-router'
+import {Router, Route, browserHistory, IndexRoute} from 'react-router'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import reducer from './reducers/reducer'
@@ -9,13 +9,14 @@ import Home from './components/Home'
 
 const store = createStore(reducer)
 
-const routes = <Route component={App}>
-  <Route path='/' component={Home} />
-</Route>
+const routes =
+  <Route path='/' component={App}>
+    <IndexRoute component={Home} />
+  </Route>
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>{routes}</Router>
+    <Router history={browserHistory}>{routes}</Router>
   </Provider>,
   document.getElementById('app')
 )
