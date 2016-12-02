@@ -1,13 +1,15 @@
 const http = require('http')
 const express = require('express')
 const path = require('path')
-
+const API = require('./api/api')
 const { PORT } = require('../config/application-constants')
+
 const portNum = process.env.WFMSPORT || PORT
 
 const app = express()
 const server = http.createServer(app)
 
+API.init(app)
 app.use(express.static(path.resolve(__dirname, '../build/')))
 
 const startServer = (portNum) => {
