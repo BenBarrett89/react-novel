@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {next} from './../actions/NovelActions'
+import {next, previous} from './../actions/NovelActions'
 import Novel from './../components/Novel.jsx'
 
 export const NovelPage = React.createClass({
@@ -15,14 +15,17 @@ export const NovelPage = React.createClass({
 
 function mapStateToProps (state) {
   return {
-    test: state.novel.test
+    itemNumber: state.novel.itemNumber
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    next: () => {
+    onNext: () => {
       dispatch(next())
+    },
+    onPrevious: () => {
+      dispatch(previous())
     }
   }
 }
